@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 const app = express();
-const port = 443;
+const port = process.env.PORT || 3000;
 
 const auth = 'b4zYtVzNzfAvpSbsSt2P9Ku9Hp4z2v2iVFVUGbS0MmY';
 
