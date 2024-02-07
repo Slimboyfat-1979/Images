@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Generate me a <span>picture</span></h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div class="main">
+        <h2>Choose how you want to generate a picture</h2>
+        <div class="main-container">
+           <div class="random box">
+            <h3>Generate Your Image: <span>Randomly</span></h3>
+            <form method="post">
+                <button formaction="/random">Generate</button>
+            </form>
+           </div>
+           <div class="divider">OR</div>
+           <div class="generate box">
+            <h3>Generate Your Image By: <span>Searching</span></h3>
+            <form method="post">
+                <input type="text" name="imageTopic">
+                <button formaction="/submit">Generate</button>
+            </form>
+           </div>
+        </div>
+    </div>
+    <% if (locals.imageUrl) { %>
+        <div class="pictureContainer">
+            <img src="<%= imageUrl %>" alt="">
+        </div>
+    <% } %>
+
+</body>
+</html>
+
